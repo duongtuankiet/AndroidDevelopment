@@ -5,6 +5,9 @@
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="forgotpassword">ForgotPassword</string>
+    <string name="todo">TODO</string>
+    <string name="re_type_password">Re-type password</string>
+    <string name="cancel">Cancel</string>
 
 
 </resources>

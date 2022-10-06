@@ -7,7 +7,7 @@
     android:background="@color/black"
     android:backgroundTint="#202A30"
     android:visibility="visible"
-    tools:context=".MainActivity">
+    tools:context=".Dangnhap">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -32,7 +32,8 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:textColor="#FF9800"
-            android:textColorHint="#FF9800" />
+            android:textColorHint="#FF9800"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/edtPass"
@@ -68,8 +69,8 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="5dp"
             android:layout_weight="1"
             android:backgroundTint="#FF9800"
             android:text="@string/login"
@@ -80,8 +81,8 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="60dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="60dp"
             android:layout_weight="1"
             android:backgroundTint="#FF9800"
             android:text="@string/register"
@@ -104,9 +105,9 @@
             android:id="@+id/btnForget"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="184dp"
-            android:layout_height="2dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="60dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="60dp"
             android:layout_weight="1"
             android:text="@string/forgotpassword"
             android:textColor="#FF5722" />
@@ -120,6 +121,7 @@
         android:layout_marginEnd="112dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="@string/todo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
