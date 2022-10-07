@@ -14,8 +14,9 @@ public class Dangnhap extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         btnRegister=findViewById(R.id.btnRegister);
+        btnLogin= findViewById(R.id.btnLogin);
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -25,5 +26,14 @@ public class Dangnhap extends AppCompatActivity {
         };
 
         btnRegister.setOnClickListener(listener);
+        View.OnClickListener listener2 = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Dangnhap.this,Trangchu.class);
+                startActivity(i);
+            }
+        };
+
+        btnLogin.setOnClickListener(listener2);
     }
 }

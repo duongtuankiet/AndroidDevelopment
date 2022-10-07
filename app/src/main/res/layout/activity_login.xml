@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CA8383"
-    android:backgroundTint="@android:color/system_neutral1_800"
+    android:background="@color/black"
+    android:backgroundTint="#202A30"
     android:visibility="visible"
     tools:context=".Dangnhap">
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="418dp"
-        android:layout_height="115dp"
+        android:layout_width="400dp"
+        android:layout_height="111dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +32,8 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:textColor="#FF9800"
-            android:textColorHint="#FF9800" />
+            android:textColorHint="#FF9800"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/edtPass"
@@ -68,22 +69,24 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="5dp"
             android:layout_weight="1"
+            android:backgroundTint="#FF9800"
             android:text="@string/login"
-            android:textColor="#FF5722" />
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/btnRegister"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="60dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="60dp"
             android:layout_weight="1"
+            android:backgroundTint="#FF9800"
             android:text="@string/register"
-            android:textColor="#FF5722" />
+            android:textColor="@color/black" />
 
     </LinearLayout>
 
@@ -102,22 +105,23 @@
             android:id="@+id/btnForget"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="184dp"
-            android:layout_height="2dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="60dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="60dp"
             android:layout_weight="1"
             android:text="@string/forgotpassword"
             android:textColor="#FF5722" />
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="231dp"
-        android:layout_height="152dp"
-        android:layout_marginTop="92dp"
+        android:id="@+id/imageView2"
+        android:layout_width="182dp"
+        android:layout_height="158dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="112dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="@string/todo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
