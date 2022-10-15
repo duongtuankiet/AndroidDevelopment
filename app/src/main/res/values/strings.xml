@@ -19,6 +19,11 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="_1">1</string>
+    <string name="sharp">#</string>
+    <string name="_2016">2016</string>
+    <string name="author">Zayn</string>
+    <string name="name_manga">Pillow Talk</string>
 
 
 </resources>
