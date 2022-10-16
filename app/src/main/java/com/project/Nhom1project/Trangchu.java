@@ -21,8 +21,7 @@ public class Trangchu extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mangaList = Manga.init();
-        mangaAdapter = new
-                MangaAdapter(Trangchu.this,R.layout.layout_item,mangaList);
+        mangaAdapter = new MangaAdapter(Trangchu.this,R.layout.layout_item,mangaList);
         mRecyclerView.setAdapter(mangaAdapter);
     }
 

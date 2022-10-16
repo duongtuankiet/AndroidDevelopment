@@ -34,23 +34,42 @@ public class Manga {
     public void setRank(int rank) { this.rank = rank;
     }
     public static ArrayList<Manga> init(){
-        String[] names = {"I Took A Pill In Ibiza", "7 Years", "Pillow Talk", "Work From Home", "Never Forget You", "Don't Let Me Down",
-                "Love Yourself", "Me, Myself &amp; I", "Cake By The Ocean",
-                "Dangerous Woman",
-                "My House", "Stressed Out", "One Dance", "Middle", "No"};
-        String[] singers = {"Mike Posner", "Lukas Graham", "Zayn", "Fifth Harmony", "Zara Larsson &amp; MNEK", "The Chainsmokers",
-        "Justin Bieber", "G-Eazy x Bebe Rexha", "DNCE", "Ariana Grande", "Flo Rida", "Twenty one Pilots", "Drake", "DJ Snake", "Meghan Trainer"};
+        String[] names = {
+                "Isekai Ojisan",
+                "Slime Datta Ken",
+                "Jujutsu Kaisen",
+                "OnePiece",
+                "Naruto",
+                "Dragon Ball ",
+                "Conan",
+                "Elite Classroom",
+                "Horimiya",
+                "Uzaki-chan wa asobitai",
+                "Overflow",
+                "Fairy Tail",
+                "Kimetsu no Yaiba",
+                "Attack on Titan",
+                "Inuyasha"};
+
         int[] pics = {
-                R.drawable.rem, R.drawable.rem,
-                R.drawable.rem,
-                R.drawable.rem, R.drawable.rem, R.drawable.rem,
-                R.drawable.rem, R.drawable.rem, R.drawable.rem,
-                R.drawable.rem, R.drawable.rem, R.drawable.rem,
-                R.drawable.rem,
-                R.drawable.rem, R.drawable.rem};
+                R.drawable.isekaiojisan,
+                R.drawable.slimedattaken,
+                R.drawable.jujutsukaisen,
+                R.drawable.op,
+                R.drawable.naruto,
+                R.drawable.dragonball,
+                R.drawable.conan,
+                R.drawable.eliteclassroom,
+                R.drawable.horimiya,
+                R.drawable.uzakichan,
+                R.drawable.overflow,
+                R.drawable.fairytail,
+                R.drawable.kimetsunoyaiba,
+                R.drawable.attackontitan,
+                R.drawable.inuyasha};
         ArrayList<Manga> arrayList = new ArrayList<>(); for (int i = 0; i <
                 names.length; i++) {
-            Manga manga = new Manga(names[i], singers[i], i + 1, pics[i]);
+            Manga manga = new Manga(names[i], null, i + 1, pics[i]);
             arrayList.add(manga);
         }
         return arrayList;

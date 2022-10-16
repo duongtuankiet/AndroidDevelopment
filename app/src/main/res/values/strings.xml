@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Nhom1</string>
+    <string name="app_name">Anime-chan</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
@@ -22,8 +22,11 @@
     <string name="_1">1</string>
     <string name="sharp">#</string>
     <string name="_2016">2016</string>
-    <string name="author">Zayn</string>
-    <string name="name_manga">Pillow Talk</string>
+    <string name="author">Auth</string>
+    <string name="name_manga">Manga</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="favourite">Favourite</string>
 
 
 </resources>

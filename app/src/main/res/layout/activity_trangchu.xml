@@ -10,48 +10,57 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="406dp"
-        android:layout_height="268dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="416dp"
         android:layout_height="65dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/button"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:backgroundTint="#2196F3"
-            android:text="Button" />
+            android:backgroundTint="@color/cardview_dark_background"
+            android:text="@string/previous"
+            android:textColor="#82B1FF" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="#CDDC39"
-            android:text="Button" />
+            android:backgroundTint="#FF5722"
+            android:text="@string/favourite"
+            style="?android:attr/buttonBarButtonStyle" />
 
         <Button
             android:id="@+id/button3"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:backgroundTint="#FF5722"
-            android:text="Button" />
+            android:backgroundTint="@color/cardview_dark_background"
+            android:text="@string/next"
+            android:textColor="#82B1FF" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
