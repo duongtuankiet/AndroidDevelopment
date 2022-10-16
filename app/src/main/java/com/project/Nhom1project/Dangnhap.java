@@ -1,5 +1,6 @@
 package com.project.Nhom1project;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -17,6 +18,8 @@ public class Dangnhap extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         btnRegister=findViewById(R.id.btnRegister);
         btnLogin= findViewById(R.id.btnLogin);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {

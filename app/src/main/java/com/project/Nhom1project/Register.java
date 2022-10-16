@@ -1,5 +1,6 @@
 package com.project.Nhom1project;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -24,6 +25,8 @@ public class Register extends AppCompatActivity {
         btnRegister=findViewById(R.id.btnRegister);
         edtPass =findViewById(R.id.edtPass);
         edtRepass =findViewById(R.id.edtRetype);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         edtUsn=findViewById(R.id.edtUsername);
        btnCancel.setOnClickListener(view -> {
            Intent i = new Intent(Register.this,Dangnhap.class);
@@ -44,11 +47,13 @@ public class Register extends AppCompatActivity {
             }
             else
             {
+
                 Toast.makeText(Register.this,"Register successful",Toast.LENGTH_LONG).show();
                 Intent i = new Intent(Register.this,Dangnhap.class);
                 startActivity(i);
             }
         });
+
     }
 
 }
