@@ -173,7 +173,7 @@
     <EditText
         android:id="@+id/edtSearch"
         android:layout_width="149dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:layout_marginEnd="50dp"
         android:backgroundTint="#FB8C00"
         android:ems="10"
@@ -189,6 +189,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/action_settings"
         app:layout_constraintStart_toEndOf="@+id/edtSearch"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_search" />

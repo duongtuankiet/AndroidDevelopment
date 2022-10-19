@@ -24,28 +24,31 @@ public class MangaAdapter extends RecyclerView.Adapter<MangaAdapter.ViewHolder>{
         return new ViewHolder(v);
     }
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) { Manga
-            song = arrayList.get(position);
-        holder.tvRank.setText(String.valueOf(song.getRank()));
-        holder.tvSongName.setText(song.getName());
-        holder.tvSinger.setText(song.getAuthor());
-        holder.tvYear.setText(song.getYear());
-        holder.ivAlbumCover.setImageResource(song.getPic());
-        holder.tvYear.setText("2016");
+    public void onBindViewHolder(ViewHolder holder, int position) { Manga manga = arrayList.get(position);
+        holder.tvRank.setText(String.valueOf(manga.getRank()));
+        holder.tvName.setText(manga.getName());
+        holder.tvAuthor.setText(manga.getAuthor());
+        holder.tvYear.setText(manga.getYear());
+        holder.ivMangaCover.setImageResource(manga.getPic());
+        holder.tvYear.setText("");
     }
+
+
     @Override
-    public int getItemCount() { return arrayList.size();
+    public int getItemCount() {
+        return arrayList.size();
     }
     public static class ViewHolder extends RecyclerView.ViewHolder{ public
-    TextView tvRank,tvSongName,tvSinger,tvYear;
-        public ImageView ivAlbumCover;
+    TextView tvRank,tvName,tvAuthor,tvYear;
+        public ImageView ivMangaCover;
         public ViewHolder(View v) { super(v);
             tvRank = v.findViewById(R.id.tv_rank);
-            tvSongName = v.findViewById(R.id.tv_song_name); tvSinger =
-                    v.findViewById(R.id.tv_singer);
+            tvName = v.findViewById(R.id.tv_song_name);
+            tvAuthor = v.findViewById(R.id.tv_singer);
             tvYear = v.findViewById(R.id.tv_year);
-            ivAlbumCover = v.findViewById(R.id.iv_album_cover);
+            ivMangaCover = v.findViewById(R.id.iv_album_cover);
         }
     }
+
 
 }

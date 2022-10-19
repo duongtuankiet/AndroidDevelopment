@@ -7,17 +7,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class Dangnhap extends AppCompatActivity {
 
     Button btnLogin;
     Button btnRegister;
+    EditText edtUsn, edtPasswd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         btnRegister=findViewById(R.id.btnRegister);
         btnLogin= findViewById(R.id.btnLogin);
+        edtUsn = findViewById(R.id.edtUsername);
+        edtPasswd= findViewById(R.id.edtPass);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         View.OnClickListener listener = new View.OnClickListener() {
@@ -32,8 +37,16 @@ public class Dangnhap extends AppCompatActivity {
         View.OnClickListener listener2 = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (edtUsn.getText().toString().equals(""))
+                {
+                    Toast.makeText(Dangnhap.this,"Username not null",Toast.LENGTH_LONG);
+
+                }
+                else
+                {
                 Intent i = new Intent(Dangnhap.this,Trangchu.class);
                 startActivity(i);
+                }
             }
         };
 

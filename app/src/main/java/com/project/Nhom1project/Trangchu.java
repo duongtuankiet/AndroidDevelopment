@@ -52,6 +52,9 @@ public class Trangchu extends AppCompatActivity {
             Intent intent = new Intent(Trangchu.this,Dangnhap.class);
             startActivity(intent);
         });
+
+
+
     }
 
 }
