@@ -107,6 +107,7 @@
             android:layout_marginEnd="60dp"
             android:layout_weight="1"
             android:backgroundTint="#FF9800"
+            app:cornerRadius="20dp"
             android:text="@string/register"
             android:textColor="@color/black" />
 

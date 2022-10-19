@@ -33,7 +33,7 @@ public class Register extends AppCompatActivity {
            startActivity(i);
        }); //password at least eight characters long
         btnRegister.setOnClickListener(view -> {
-            if(edtUsn.getText().toString().equals(""))
+            if(edtUsn==null)
             {
                 txtView.setText("Username not null");
             }

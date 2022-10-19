@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class Dangnhap extends AppCompatActivity {
 
     Button btnLogin;
-    Button btnRegister;
+    Button btnRegister,btnForget;
     EditText edtUsn, edtPasswd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class Dangnhap extends AppCompatActivity {
         btnLogin= findViewById(R.id.btnLogin);
         edtUsn = findViewById(R.id.edtUsername);
         edtPasswd= findViewById(R.id.edtPass);
+        btnForget=findViewById(R.id.btnForget);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         View.OnClickListener listener = new View.OnClickListener() {
@@ -39,7 +40,7 @@ public class Dangnhap extends AppCompatActivity {
             public void onClick(View view) {
                 if (edtUsn.getText().toString().equals(""))
                 {
-                    Toast.makeText(Dangnhap.this,"Username not null",Toast.LENGTH_LONG);
+                    Toast.makeText(Dangnhap.this,"Username not null",Toast.LENGTH_LONG).show();
 
                 }
                 else
@@ -51,5 +52,9 @@ public class Dangnhap extends AppCompatActivity {
         };
 
         btnLogin.setOnClickListener(listener2);
+        btnForget.setOnClickListener(view -> {
+            Toast.makeText(Dangnhap.this,"Sent email",Toast.LENGTH_LONG).show();
+        });
+
     }
 }
