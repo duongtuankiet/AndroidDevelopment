@@ -3,27 +3,18 @@ package com.project.Nhom1project;
 import java.util.ArrayList;
 
 public class Manga {
-    private String name, author,year; private int pic,rank;
-    public Manga(String name, String singer, String year, int pic, int
-            rank) { this.name = name;
-        this.author = singer;
-        this.year = year; this.pic = pic; this.rank = rank;
+    private String name; private int pic,rank;
+    public Manga(String name, int pic, int rank)
+    {
+            this.name = name;
+            this.pic = pic;
+            this.rank = rank;
     }
-    public Manga(String name, String singer, int rank, int pic){ this.name
-            = name;
-        this.author = singer; this.rank = rank; this.pic = pic;
+    public Manga(String name){ this.name = name;
     }
     public String getName() { return name;
     }
     public void setName(String name) { this.name = name;
-    }
-    public String getAuthor() { return author;
-    }
-    public void setAuthor(String author) { this.author = author;
-    }
-    public String getYear() { return year;
-    }
-    public void setYear(String year) { this.year = year;
     }
     public int getPic() { return pic;
     }
@@ -69,7 +60,7 @@ public class Manga {
                 R.drawable.inuyasha};
         ArrayList<Manga> arrayList = new ArrayList<>(); for (int i = 0; i <
                 names.length; i++) {
-            Manga manga = new Manga(names[i], null, i + 1, pics[i]);
+            Manga manga = new Manga(names[i],  pics[i],i+1);
             arrayList.add(manga);
         }
         return arrayList;

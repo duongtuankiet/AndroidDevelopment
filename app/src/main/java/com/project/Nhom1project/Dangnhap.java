@@ -33,7 +33,6 @@ public class Dangnhap extends AppCompatActivity {
                 startActivity(i);
             }
         };
-
         btnRegister.setOnClickListener(listener);
         View.OnClickListener listener2 = new View.OnClickListener() {
             @Override
@@ -57,4 +56,5 @@ public class Dangnhap extends AppCompatActivity {
         });
 
     }
+
 }

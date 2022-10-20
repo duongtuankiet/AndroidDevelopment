@@ -28,12 +28,12 @@ public class Register extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         edtUsn=findViewById(R.id.edtUsername);
-       btnCancel.setOnClickListener(view -> {
+        btnCancel.setOnClickListener(view -> {
            Intent i = new Intent(Register.this,Dangnhap.class);
            startActivity(i);
        }); //password at least eight characters long
         btnRegister.setOnClickListener(view -> {
-            if(edtUsn==null)
+            if(edtUsn.getText().toString().equals(""))
             {
                 txtView.setText("Username not null");
             }
@@ -47,7 +47,6 @@ public class Register extends AppCompatActivity {
             }
             else
             {
-
                 Toast.makeText(Register.this,"Register successful",Toast.LENGTH_LONG).show();
                 Intent i = new Intent(Register.this,Dangnhap.class);
                 startActivity(i);

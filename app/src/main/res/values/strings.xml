@@ -15,20 +15,25 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
+    <string name="title">Đây là câu chuyện về ánh sáng và sự tích cực, nhân vật chính cùng em gái du hành khắp vũ trụ và bị mắc kẹt tại một nơi được gọi là Teyvat ...</string>
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="_1">1</string>
     <string name="sharp">#</string>
     <string name="_2016">2016</string>
-    <string name="author">Auth</string>
+    <string name="author">Author: Update</string>
+    <string name="process">Process: Update</string>
+    <string name="loves">Favourite: 999</string>
+    <string name="like">Likes: 999</string>
     <string name="name_manga">Manga</string>
     <string name="previous">Previous</string>
     <string name="next">Next</string>
     <string name="favourite">Favourite</string>
     <string name="logout">Logout</string>
     <string name="search">Search</string>
+    <string name="name">name</string>
+    <string name="read">Read</string>
 
 
 </resources>
