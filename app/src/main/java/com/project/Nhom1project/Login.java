@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Dangnhap extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     Button btnLogin;
     Button btnRegister,btnForget;
@@ -25,35 +25,28 @@ public class Dangnhap extends AppCompatActivity {
         edtPasswd= findViewById(R.id.edtPass);
         btnForget=findViewById(R.id.btnForget);
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.hide();
-        View.OnClickListener listener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Dangnhap.this,Register.class);
-                startActivity(i);
-            }
+        View.OnClickListener listener = view -> {
+            Intent i = new Intent(Login.this,Register.class);
+            startActivity(i);
         };
         btnRegister.setOnClickListener(listener);
-        View.OnClickListener listener2 = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (edtUsn.getText().toString().equals(""))
-                {
-                    Toast.makeText(Dangnhap.this,"Username not null",Toast.LENGTH_LONG).show();
+        View.OnClickListener listener2 = view -> {
+            if (edtUsn.getText().toString().equals(""))
+            {
+                Toast.makeText(Login.this,"Username not null",Toast.LENGTH_LONG).show();
 
-                }
-                else
-                {
-                Intent i = new Intent(Dangnhap.this,Trangchu.class);
-                startActivity(i);
-                }
+            }
+            else
+            {
+            Intent i = new Intent(Login.this, MainActivity.class);
+            startActivity(i);
             }
         };
 
         btnLogin.setOnClickListener(listener2);
-        btnForget.setOnClickListener(view -> {
-            Toast.makeText(Dangnhap.this,"Sent email",Toast.LENGTH_LONG).show();
-        });
+        btnForget.setOnClickListener(view -> Toast.makeText(Login.this,"Sent email",Toast.LENGTH_LONG).show());
 
     }
 

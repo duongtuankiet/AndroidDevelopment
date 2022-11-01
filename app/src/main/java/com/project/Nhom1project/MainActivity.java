@@ -12,32 +12,34 @@ import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
-public class Trangchu extends AppCompatActivity  implements MangaAdapter.UserCallback  {
+public class MainActivity extends AppCompatActivity  implements MangaAdapter.UserCallback  {
 
-    private RecyclerView mRecyclerView;
     View layout;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private ArrayList<Manga> mangaList;
-    private MangaAdapter mangaAdapter;
     ImageButton btnMenu;
+    DBHelper db;
     Button btnLogout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        db = new DBHelper(this);
         setContentView(R.layout.activity_trangchu);
-        mRecyclerView = findViewById(R.id.recyclerView);
+        RecyclerView mRecyclerView = findViewById(R.id.recyclerView);
         btnMenu=findViewById(R.id.btnMenu);
         layout=findViewById(R.id.master);
         btnLogout=findViewById(R.id.btnLogout);
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.hide();
         layout.bringToFront();
         layout.setVisibility(View.INVISIBLE);
-        mLayoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mangaList = Manga.init();
-        mangaAdapter = new MangaAdapter(Trangchu.this,R.layout.layout_item,mangaList,this);
+        ArrayList<Manga> mangaList = Manga.init();
+        MangaAdapter mangaAdapter = new MangaAdapter(MainActivity.this, R.layout.layout_item, mangaList, this);
         mRecyclerView.setAdapter(mangaAdapter);
+        for (Manga manga: mangaList) {
+            db.insertManga(manga);
+        }
         btnMenu.setOnClickListener(view -> {
             if (layout.getVisibility() == View.VISIBLE)
             layout.setVisibility(View.INVISIBLE);
@@ -45,7 +47,7 @@ public class Trangchu extends AppCompatActivity  implements MangaAdapter.UserCal
                 layout.setVisibility(View.VISIBLE);
         });
         btnLogout.setOnClickListener(view -> {
-            Intent intent = new Intent(this,Dangnhap.class);
+            Intent intent = new Intent(this, Login.class);
             startActivity(intent);
         });
     }

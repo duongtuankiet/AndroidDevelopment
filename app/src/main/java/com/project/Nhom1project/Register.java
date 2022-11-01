@@ -15,10 +15,12 @@ public class Register extends AppCompatActivity {
     Button btnCancel,btnRegister;
     TextView txtView;
     EditText edtUsn,edtPass,edtRepass;
+    DBHelper db;
     @SuppressLint({"MissingInflatedId", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        db = new DBHelper(this);
         setContentView(R.layout.activity_register);
         txtView = findViewById(R.id.txtview2);
         btnCancel = findViewById(R.id.btnCancel);
@@ -26,12 +28,13 @@ public class Register extends AppCompatActivity {
         edtPass =findViewById(R.id.edtPass);
         edtRepass =findViewById(R.id.edtRetype);
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.hide();
         edtUsn=findViewById(R.id.edtUsername);
         btnCancel.setOnClickListener(view -> {
-           Intent i = new Intent(Register.this,Dangnhap.class);
-           startActivity(i);
-       }); //password at least eight characters long
+            Intent i = new Intent(Register.this, Login.class);
+            startActivity(i);
+        }); //password at least eight characters long
         btnRegister.setOnClickListener(view -> {
             if(edtUsn.getText().toString().equals(""))
             {
@@ -47,8 +50,12 @@ public class Register extends AppCompatActivity {
             }
             else
             {
+                Account account = new Account();
+                account.setUsername(edtUsn.getText().toString());
+                account.setPassword(edtPass.getText().toString());
+                db.insertAccount(account);
                 Toast.makeText(Register.this,"Register successful",Toast.LENGTH_LONG).show();
-                Intent i = new Intent(Register.this,Dangnhap.class);
+                Intent i = new Intent(Register.this, Login.class);
                 startActivity(i);
             }
         });

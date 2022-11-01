@@ -3,9 +3,10 @@ package com.project.Nhom1project;
 import java.util.ArrayList;
 
 public class Manga {
-    private String name; private int pic,rank;
-    public Manga(String name, int pic, int rank)
+    private String name; private int id,pic,rank;
+    public Manga(int id, String name, int pic, int rank)
     {
+            this.id = id;
             this.name = name;
             this.pic = pic;
             this.rank = rank;
@@ -23,6 +24,10 @@ public class Manga {
     public int getRank() { return rank;
     }
     public void setRank(int rank) { this.rank = rank;
+    }
+    public int getId() { return id;
+    }
+    public void setId(int id ) { this.id = id;
     }
     public static ArrayList<Manga> init(){
         String[] names = {
@@ -58,9 +63,24 @@ public class Manga {
                 R.drawable.kimetsunoyaiba,
                 R.drawable.attackontitan,
                 R.drawable.inuyasha};
-        ArrayList<Manga> arrayList = new ArrayList<>(); for (int i = 0; i <
-                names.length; i++) {
-            Manga manga = new Manga(names[i],  pics[i],i+1);
+        int[] rank = {
+                3,       //1: action, 2: adventure, 3: comedy, 4: romance, 5: 18+
+                1,
+                1,
+                2,
+                2,
+                1,
+                2,
+                4,
+                4,
+                3,
+                5,
+                1,
+                2,
+                1,
+                2};
+        ArrayList<Manga> arrayList = new ArrayList<>(); for (int i = 0; i < names.length; i++) {
+            Manga manga = new Manga(i+1,names[i],  pics[i],rank[i]);
             arrayList.add(manga);
         }
         return arrayList;
