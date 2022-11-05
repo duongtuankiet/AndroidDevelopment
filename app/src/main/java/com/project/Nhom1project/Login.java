@@ -3,23 +3,28 @@ package com.project.Nhom1project;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
     DBHelper db;
     Button btnLogin;
+    TextView tv;
     Button btnRegister,btnForget;
     EditText edtUsn, edtPasswd;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         db = new DBHelper(this);
         setContentView(R.layout.activity_login);
+        tv = findViewById(R.id.txt);
         btnRegister = findViewById(R.id.btnRegister);
         btnLogin = findViewById(R.id.btnLogin);
         edtUsn = findViewById(R.id.edtUsername);
@@ -33,13 +38,12 @@ public class Login extends AppCompatActivity {
             startActivity(i);
         };
         btnRegister.setOnClickListener(listener);
-        View.OnClickListener listener2 = view -> {
+        @SuppressLint("SetTextI18n") View.OnClickListener listener2 = view -> {
             String uname = edtUsn.getText().toString();
             String upass = edtPasswd.getText().toString();
             if (edtUsn.getText().toString().equals(""))
             {
-                Toast.makeText(Login.this,"Username not null",Toast.LENGTH_LONG).show();
-
+                tv.setText("Username not null!");
             }
             else
             if(db.getAccount(uname, upass))
@@ -49,7 +53,7 @@ public class Login extends AppCompatActivity {
             }
             else
             {
-                Toast.makeText(Login.this,"wrong :" +uname +" "+upass,Toast.LENGTH_LONG).show();
+                tv.setText("Wrong username and password!");
             }
         };
 

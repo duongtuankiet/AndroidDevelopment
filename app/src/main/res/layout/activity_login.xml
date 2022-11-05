@@ -15,6 +15,8 @@
         android:layout_marginTop="44dp"
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/Background"
+        android:backgroundTint="@color/Background"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -66,6 +68,15 @@
             android:minHeight="48dp"
             android:textColor="#FF9800"
             android:textColorHint="#FF9800" />
+
+        <TextView
+        android:id="@+id/txt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:textColor="#E91E63"
+        android:textSize="16sp" />
 
     </LinearLayout>
 
