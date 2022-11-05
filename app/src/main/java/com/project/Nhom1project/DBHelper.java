@@ -1,12 +1,16 @@
 package com.project.Nhom1project;
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-public class DBHelper{
+import java.util.Objects;
+
+public class DBHelper {
     String DATABASE_NAME = "data.sqlite";
     private static final String DB_PATH_SUFFIX = "/databases/";
     SQLiteDatabase db = null;
@@ -52,9 +56,25 @@ public class DBHelper{
     public void insertAccount(Account account){
         db = context.openOrCreateDatabase(DATABASE_NAME, Context.MODE_PRIVATE, null);
         ContentValues contentValues = new ContentValues();
-        contentValues.put("id", account.getId());
         contentValues.put("username", account.getUsername());
         contentValues.put("password", account.getPassword());
+        db.insert("Account",null,contentValues);
+    }
+    public boolean getAccount(String username, String password){
+        db = context.openOrCreateDatabase(DATABASE_NAME, Context.MODE_PRIVATE,null);
+        String sql = "SELECT * FROM Account";
+        boolean a = false;
+        @SuppressLint("Recycle")
+        Cursor cursor = db.rawQuery(sql,null);
+        while (cursor.moveToNext()){
+            String uname = cursor.getString(1);
+            String upass = cursor.getString(2);
+            if(username.equals(uname) && password.equals(upass))
+            {
+                a = true;
+            }
+        }
+        return a;
     }
 
     public void insertManga(Manga manga){
