@@ -57,7 +57,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <TextView
-                    android:id="@+id/txtView4"
+                    android:id="@+id/txtViewUsn"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
@@ -69,61 +69,61 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/action"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:backgroundTint="#FF9800"
-                android:text="Action"
+                android:text="@string/action"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:cornerRadius="20dp" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/adventure"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:backgroundTint="#FF9800"
-                android:text="Adventure"
+                android:text="@string/adventure"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:cornerRadius="20dp" />
 
             <Button
-                android:id="@+id/button10"
+                android:id="@+id/comedy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:backgroundTint="#FF9800"
-                android:text="Comedy"
+                android:text="@string/comedy"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:cornerRadius="20dp" />
 
             <Button
-                android:id="@+id/button11"
+                android:id="@+id/romance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:backgroundTint="#FF9800"
-                android:text="Romance"
+                android:text="@string/romance"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:cornerRadius="20dp" />
 
             <Button
-                android:id="@+id/button12"
+                android:id="@+id/adult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:backgroundTint="#FF9800"
-                android:text="18+"
+                android:text="@string/_18"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:cornerRadius="20dp" />
@@ -140,7 +140,7 @@
                 android:layout_marginBottom="10dp"
                 android:backgroundTint="#D81B60"
                 android:text="@string/logout"
-                android:textColor="@color/black"
+                android:textColor="#212121"
                 android:textStyle="bold"
                 app:cornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -187,10 +187,11 @@
         android:textColor="#FB8C00"
         android:textColorHint="#FB8C00"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"

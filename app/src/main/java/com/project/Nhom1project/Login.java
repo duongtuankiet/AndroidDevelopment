@@ -48,7 +48,9 @@ public class Login extends AppCompatActivity {
             else
             if(db.getAccount(uname, upass))
             {
+                String user = edtUsn.getText().toString();
                 Intent i = new Intent(Login.this, MainActivity.class);
+                i.putExtra("uname",user);
                 startActivity(i);
             }
             else

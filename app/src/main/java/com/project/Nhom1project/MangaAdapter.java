@@ -17,14 +17,13 @@ public class MangaAdapter extends RecyclerView.Adapter<MangaAdapter.ViewHolder>{
         this.context = context;
         this.layout = layout;
         this.arrayList = arrayList;
-        this.userCallback= userCallback;
-
+        this.userCallback = userCallback;
     }
     @NonNull @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-        View v= inflater.inflate(R.layout.layout_item, parent, false);
+        View v = inflater.inflate(R.layout.layout_item, parent, false);
         return new ViewHolder(v);
 
     }
@@ -33,7 +32,7 @@ public class MangaAdapter extends RecyclerView.Adapter<MangaAdapter.ViewHolder>{
     {
         Manga manga = arrayList.get(position);
         holder.tvName.setText(manga.getName());
-        holder.ivMangaCover.setImageResource(manga.getPic());
+        holder.ivManga.setImageResource(manga.getPic());
         holder.itemView.setOnClickListener(view -> userCallback.onItemClick(manga.getPic(),manga.getName()));
     }
 
@@ -43,11 +42,11 @@ public class MangaAdapter extends RecyclerView.Adapter<MangaAdapter.ViewHolder>{
     }
     public static class ViewHolder extends RecyclerView.ViewHolder{ public
         TextView tvName;
-        public ImageView ivMangaCover;
+        public ImageView ivManga;
         public ViewHolder(@NonNull View v) {
             super(v);
             tvName = v.findViewById(R.id.tvName);
-            ivMangaCover = v.findViewById(R.id.ivManga);
+            ivManga = v.findViewById(R.id.ivManga);
         }
     }
     public interface UserCallback{

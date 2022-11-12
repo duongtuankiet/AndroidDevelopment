@@ -34,6 +34,11 @@
     <string name="search">Search</string>
     <string name="name">name</string>
     <string name="read">Read</string>
+    <string name="action">Action</string>
+    <string name="adventure">Adventure</string>
+    <string name="comedy">Comedy</string>
+    <string name="romance">Romance</string>
+    <string name="_18">18+</string>
 
 
 </resources>

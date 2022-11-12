@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class DBHelper {
@@ -76,14 +77,56 @@ public class DBHelper {
         }
         return a;
     }
-
-    public void insertManga(Manga manga){
+    public ArrayList<Manga> exportManga(){
+        ArrayList<Manga> arrayList;
+        arrayList = new ArrayList<>();
         db = context.openOrCreateDatabase(DATABASE_NAME, Context.MODE_PRIVATE, null);
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("id", manga.getId());
-        contentValues.put("name", manga.getName());
-        contentValues.put("pic", manga.getPic());
-        contentValues.put("rank", manga.getRank());
+        String sql = "SELECT * FROM Manga";
+        @SuppressLint("Recycle")
+        Cursor cursor = db.rawQuery(sql,null);
+        while (cursor.moveToNext()){
+            String name = cursor.getString(1);
+            String pic = cursor.getString(2);
+            String s = pic.replace("R.drawable.","");
+            int picid = context.getResources().getIdentifier(s,"drawable",context.getPackageName());
+            int rank = cursor.getInt(3);
+            arrayList.add(new Manga(0,name,picid,rank));
+        }
+        return arrayList;
+    }
+    public ArrayList<Manga> exportRankedManga(int ranked){
+        ArrayList<Manga> arrayList;
+        arrayList = new ArrayList<>();
+        db = context.openOrCreateDatabase(DATABASE_NAME, Context.MODE_PRIVATE, null);
+        String sql = "SELECT * FROM Manga WHERE rank =  '"+ranked+"'";
+        @SuppressLint("Recycle")
+        Cursor cursor = db.rawQuery(sql,null);
+        while (cursor.moveToNext()){
+            String name = cursor.getString(1);
+            String pic = cursor.getString(2);
+            String s = pic.replace("R.drawable.","");
+            int picid = context.getResources().getIdentifier(s,"drawable",context.getPackageName());
+            int rank = cursor.getInt(3);
+            arrayList.add(new Manga(0,name,picid,rank));
+        }
+        return arrayList;
+    }
+    public ArrayList<Manga> exportSearchManga(String named){
+        ArrayList<Manga> arrayList;
+        arrayList = new ArrayList<>();
+        db = context.openOrCreateDatabase(DATABASE_NAME, Context.MODE_PRIVATE, null);
+        String sql = "SELECT * FROM Manga WHERE name LIKE '%"+named+"%'";
+        @SuppressLint("Recycle")
+        Cursor cursor = db.rawQuery(sql,null);
+        while (cursor.moveToNext()){
+            String name = cursor.getString(1);
+            String pic = cursor.getString(2);
+            String s = pic.replace("R.drawable.","");
+            int picid = context.getResources().getIdentifier(s,"drawable",context.getPackageName());
+            int rank = cursor.getInt(3);
+            arrayList.add(new Manga(0,name,picid,rank));
+        }
+        return arrayList;
     }
 }
 
