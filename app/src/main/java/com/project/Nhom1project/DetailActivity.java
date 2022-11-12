@@ -16,6 +16,7 @@ public class DetailActivity  extends AppCompatActivity {
     TextView txtView;
     Button btnPrev;
     Button btnFav;
+    Button btnRead;
     @SuppressLint("MissingInflatedId")
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class DetailActivity  extends AppCompatActivity {
         imgView = findViewById(R.id.imgView);
         imgFav = findViewById(R.id.imageFav);
         btnFav = findViewById(R.id.btnFav);
+        btnRead= findViewById(R.id.btnRead);
         imgFav.bringToFront();
         imgFav.setVisibility(View.INVISIBLE);
         String id = getIntent().getStringExtra("name");
@@ -42,5 +44,11 @@ public class DetailActivity  extends AppCompatActivity {
             else
                 imgFav.setVisibility(View.VISIBLE);
         });
+        btnRead.setOnClickListener(view ->{
+            Intent i = new Intent(DetailActivity.this,MangaReader.class);
+            i.putExtra("img",idR);
+            startActivity(i);
+        });
+
     }
 }
