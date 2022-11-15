@@ -9,8 +9,6 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.Objects;
-
 public class DBHelper {
     String DATABASE_NAME = "data.sqlite";
     private static final String DB_PATH_SUFFIX = "/databases/";
@@ -80,6 +78,7 @@ public class DBHelper {
     public ArrayList<Manga> exportManga(){
         ArrayList<Manga> arrayList;
         arrayList = new ArrayList<>();
+        int i = 0;
         db = context.openOrCreateDatabase(DATABASE_NAME, Context.MODE_PRIVATE, null);
         String sql = "SELECT * FROM Manga";
         @SuppressLint("Recycle")
@@ -89,14 +88,15 @@ public class DBHelper {
             String pic = cursor.getString(2);
             String s = pic.replace("R.drawable.","");
             int picid = context.getResources().getIdentifier(s,"drawable",context.getPackageName());
-            int rank = cursor.getInt(3);
-            arrayList.add(new Manga(0,name,picid,rank));
+            arrayList.add(new Manga(i,name,picid, "","","",0,0));
+            ++i;
         }
         return arrayList;
     }
     public ArrayList<Manga> exportRankedManga(int ranked){
         ArrayList<Manga> arrayList;
         arrayList = new ArrayList<>();
+        int i = 0;
         db = context.openOrCreateDatabase(DATABASE_NAME, Context.MODE_PRIVATE, null);
         String sql = "SELECT * FROM Manga WHERE rank =  '"+ranked+"'";
         @SuppressLint("Recycle")
@@ -106,14 +106,15 @@ public class DBHelper {
             String pic = cursor.getString(2);
             String s = pic.replace("R.drawable.","");
             int picid = context.getResources().getIdentifier(s,"drawable",context.getPackageName());
-            int rank = cursor.getInt(3);
-            arrayList.add(new Manga(0,name,picid,rank));
+            arrayList.add(new Manga(i,name,picid, "","","",0,0));
+            ++i;
         }
         return arrayList;
     }
     public ArrayList<Manga> exportSearchManga(String named){
         ArrayList<Manga> arrayList;
         arrayList = new ArrayList<>();
+        int i = 0;
         db = context.openOrCreateDatabase(DATABASE_NAME, Context.MODE_PRIVATE, null);
         String sql = "SELECT * FROM Manga WHERE name LIKE '%"+named+"%'";
         @SuppressLint("Recycle")
@@ -123,10 +124,31 @@ public class DBHelper {
             String pic = cursor.getString(2);
             String s = pic.replace("R.drawable.","");
             int picid = context.getResources().getIdentifier(s,"drawable",context.getPackageName());
-            int rank = cursor.getInt(3);
-            arrayList.add(new Manga(0,name,picid,rank));
+            arrayList.add(new Manga(i,name,picid, "","","",0,0));
+            i++;
         }
         return arrayList;
+    }
+
+    public Manga setInfo(String name)
+    {
+        String sql ="SELECT * FROM Manga WHERE name = '"+name+"'";
+        db = context.openOrCreateDatabase(DATABASE_NAME, Context.MODE_PRIVATE, null);
+        Manga manga = new Manga();
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery(sql,null);
+        if(cursor.moveToNext()){
+            String author = cursor.getString(4);
+            String progress = cursor.getString(5);
+            int favourite = cursor.getInt(6);
+            int like = cursor.getInt(7);
+            String description = cursor.getString(8);
+            manga.setAuthor(author);
+            manga.setDescription(description);
+            manga.setFavourite(favourite);
+            manga.setProgress(progress);
+            manga.setLike(like);
+        }
+        return manga;
     }
 }
 

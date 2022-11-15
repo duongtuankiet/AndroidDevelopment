@@ -7,8 +7,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.ProgressBar;
-
 @SuppressLint("CustomSplashScreen")
 public class SplashScreen extends AppCompatActivity{
     @Override protected void onCreate(Bundle savedInstanceState){
@@ -18,12 +16,10 @@ public class SplashScreen extends AppCompatActivity{
         assert actionBar != null;
         actionBar.hide();
         Handler handler = new Handler();
-        handler.postDelayed(new Runnable(){
-            @Override public void run(){
-                startActivity(new Intent(SplashScreen.this, Login.class));
-                finish();
-            }
-        },1000);
+        handler.postDelayed(() -> {
+            startActivity(new Intent(SplashScreen.this, Login.class));
+            finish();
+        },700);
 
     }
 }

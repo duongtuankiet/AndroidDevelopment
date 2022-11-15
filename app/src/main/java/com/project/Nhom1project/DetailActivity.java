@@ -14,24 +14,44 @@ public class DetailActivity  extends AppCompatActivity {
     ImageView imgView;
     ImageView imgFav;
     TextView txtView;
+    TextView txtAuth;
+    TextView txtProgress;
+    TextView txtFav;
+    TextView txtLike;
+    TextView txtTitle;
     Button btnPrev;
     Button btnFav;
     Button btnRead;
-    @SuppressLint("MissingInflatedId")
+    DBHelper db;
+    Manga manga;
+    @SuppressLint({"MissingInflatedId", "SetTextI18n"})
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        db = new DBHelper(this);
+        manga = new Manga(0,"",0, "","","",0,0);
         setContentView(R.layout.activity_detail);
         txtView = findViewById(R.id.txtView);
+        txtAuth = findViewById(R.id.txtAuth);
+        txtProgress=findViewById(R.id.txtProgress);
+        txtFav=findViewById(R.id.txtFav);
+        txtLike=findViewById(R.id.txtLike);
+        txtTitle=findViewById(R.id.txtTitle);
         imgView = findViewById(R.id.imgView);
         imgFav = findViewById(R.id.imageFav);
         btnFav = findViewById(R.id.btnFav);
         btnRead= findViewById(R.id.btnRead);
         imgFav.bringToFront();
+        String name = getIntent().getStringExtra("name");
         imgFav.setVisibility(View.INVISIBLE);
-        String id = getIntent().getStringExtra("name");
-        int idR = getIntent().getIntExtra("Id",R.drawable.attackontitan);
-        txtView.setText(id);
+        manga = db.setInfo(name);
+        txtAuth.setText(manga.getAuthor());
+        txtLike.setText(""+ manga.getLike());
+        txtFav.setText(""+manga.getFavourite());
+        txtProgress.setText(manga.getProgress());
+        txtTitle.setText(manga.getDescription());
+        int idR = getIntent().getIntExtra("pic",R.drawable.attackontitan);
+        txtView.setText(name);
         imgView.setImageResource(idR);
         btnPrev = findViewById(R.id.btnPrev);
         btnPrev.setOnClickListener(view -> {
@@ -49,6 +69,5 @@ public class DetailActivity  extends AppCompatActivity {
             i.putExtra("img",idR);
             startActivity(i);
         });
-
     }
 }

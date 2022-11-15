@@ -33,7 +33,7 @@ public class MangaAdapter extends RecyclerView.Adapter<MangaAdapter.ViewHolder>{
         Manga manga = arrayList.get(position);
         holder.tvName.setText(manga.getName());
         holder.ivManga.setImageResource(manga.getPic());
-        holder.itemView.setOnClickListener(view -> userCallback.onItemClick(manga.getPic(),manga.getName()));
+        holder.itemView.setOnClickListener(view -> userCallback.onItemClick(manga.getId(),manga.getPic(),manga.getName()));
     }
 
     @Override
@@ -50,7 +50,7 @@ public class MangaAdapter extends RecyclerView.Adapter<MangaAdapter.ViewHolder>{
         }
     }
     public interface UserCallback{
-        void onItemClick(int id,String name);
+        void onItemClick(int id,int pic,String name);
     }
 
 

@@ -5,10 +5,6 @@ public class Account {
     String password;
     public Account() {
     }
-    public Account(String name, String password) {
-        this.username = name;
-        this.password = password;
-    }
     public String getUsername() {
         return username;
     }

@@ -4,7 +4,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -111,9 +110,10 @@ public class MainActivity extends AppCompatActivity  implements MangaAdapter.Use
         });
     }
     @Override
-    public void onItemClick(int id,String name){
+    public void onItemClick(int id,int pic,String name){
         Intent i= new Intent(this, DetailActivity.class);
-        i.putExtra("Id",id);
+        i.putExtra("id",id);
+        i.putExtra("pic",pic);
         i.putExtra("name",name);
         startActivity(i);
     }

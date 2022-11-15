@@ -8,18 +8,35 @@
     android:backgroundTint="#202A30"
     tools:context=".MangaReader">
 
-    <ImageView
-        android:id="@+id/imageManga"
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="109dp"
+        android:layout_height="48dp"
+        android:background="@color/Background"
+        android:contentDescription="@string/todo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_revert"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:scaleType="centerCrop"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageManga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            android:contentDescription="@string/todo"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_launcher_background"
+            tools:ignore="ImageContrastCheck" />
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
