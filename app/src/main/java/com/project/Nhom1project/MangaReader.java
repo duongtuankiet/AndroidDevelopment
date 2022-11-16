@@ -1,5 +1,6 @@
 package com.project.Nhom1project;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -14,6 +15,9 @@ public class MangaReader extends AppCompatActivity {
     @SuppressLint("MissingInflatedId") @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.hide();
         setContentView(R.layout.activity_manga_reader);
         imageButton =findViewById(R.id.imageButton);
         imageView = findViewById(R.id.imageManga);

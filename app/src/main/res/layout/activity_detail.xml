@@ -54,17 +54,18 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="375dp"
-        android:layout_height="97dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
         android:background="@color/cardview_dark_background"
         android:backgroundTint="@color/cardview_dark_background"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/txtView">
 
         <LinearLayout
             android:layout_width="114dp"
@@ -104,6 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:layout_marginBottom="10dp"
                 android:autoSizeTextType="uniform"
                 android:text="@string/like"
                 android:textColor="@color/white"
@@ -156,9 +158,14 @@
     </LinearLayout>
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="248dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_gravity="bottom"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

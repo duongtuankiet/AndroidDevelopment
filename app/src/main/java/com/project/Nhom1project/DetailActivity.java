@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailActivity  extends AppCompatActivity {
@@ -29,6 +30,9 @@ public class DetailActivity  extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         db = new DBHelper(this);
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.hide();
         manga = new Manga(0,"",0, "","","",0,0);
         setContentView(R.layout.activity_detail);
         txtView = findViewById(R.id.txtView);
