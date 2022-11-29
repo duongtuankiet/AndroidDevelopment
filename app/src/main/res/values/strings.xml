@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Anime-chan</string>
+    <string name="app_name">DocTruyen</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
@@ -38,6 +38,7 @@
     <string name="comedy">Comedy</string>
     <string name="romance">Romance</string>
     <string name="_18">18+</string>
+    <string name="next_chapter">Next Chapter</string>
 
 
 </resources>
