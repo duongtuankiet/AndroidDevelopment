@@ -1,2 +1,2 @@
-# Nhom1
-# This is our android project 
+# Do an Lap trinh di dong
+# App doc truyen 
