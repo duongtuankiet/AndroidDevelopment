@@ -1,2 +1,2 @@
-# Do an Lap trinh di dong
-# App doc truyen 
+Đồ án lập trình Mobile 
+App đọc truyện Android sử dụng cơ sở dữ liệu SQLite
